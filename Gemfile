@@ -9,6 +9,8 @@ gem 'jquery-rails'
 
 gem 'unicorn', '~> 4.3.1'
 
+gem 'rabl'
+gem 'yajl-ruby'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
