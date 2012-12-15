@@ -1,0 +1,126 @@
+Dec 14 00:00:25 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2] Started GET "/" for 50.18.57.7 at 2012-12-13 21:00:13 -0300
+Dec 14 00:00:25 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2] Processing by StaticController#index as */*
+Dec 14 00:00:25 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2] Started GET "/" for 50.18.57.7 at 2012-12-13 21:00:25 -0300
+Dec 14 00:00:25 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2] Processing by StaticController#index as */*
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  #033[1m#033[36mSlider Load (1.6ms)#033[0m  #033[1mSELECT "sliders".* FROM "sliders" #033[0m
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[postgres] [173-1] ucbj4qnm7jpqc7 [df260qnau3d9d] LOG:  duration: 99.100 ms  statement: SELECT COUNT(*) FROM "attendees" INNER JOIN "order_items" ON "order_items"."id" = "attendees"."order_item_id" INNER JOIN "orders" ON "orders"."id" = "order_items"."order_id" WHERE "orders"."status" IN ('approved', 'completed', 'manually_added', 'free')
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  #033[1m#033[35m (100.3ms)#033[0m  SELECT COUNT(*) FROM "attendees" INNER JOIN "order_items" ON "order_items"."id" = "attendees"."order_item_id" INNER JOIN "orders" ON "orders"."id" = "order_items"."order_id" WHERE "orders"."status" IN ('approved', 'completed', 'manually_added', 'free')
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  #033[1m#033[36mEvent Load (45.3ms)#033[0m  #033[1mSELECT "events".* FROM "events" WHERE "events"."destroyed_at" IS NULL AND "events"."draft" = 'f' AND "events"."publicly_displayed" = 't' AND (destroyed_at IS NULL AND start_at >= '2012-12-14 02:59:59') ORDER BY start_at ASC#033[0m
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/_header.html.erb (1.3ms)
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_slider_item.html.erb (6.1ms)
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[router] at=info method=HEAD path=/ host=eventick.com.br fwd=50.18.57.7 dyno=web.2 queue=0 wait=0ms connect=1ms service=12959ms status=200 bytes=0
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_next_events_box.html.erb (75.1ms)
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_recent_blog_posts.html.erb (1.1ms)
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_eventick_partners.html.erb (0.0ms)
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_eventick_media.html.erb (0.0ms)
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_social_media_landing.html.erb (0.0ms)
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/_footer2.html.erb (3.2ms)
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index.html.erb (124.2ms)
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2] Completed 200 OK in 12944ms (Views: 143.0ms | ActiveRecord: 147.1ms)
+Dec 14 00:00:26 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[nginx] 50.18.57.7 - - [14/Dec/2012:00:00:26 +0000] "HEAD / HTTP/1.0" 200 0 "-" "NewRelicPinger/1.0 (85063)" eventick.com.br
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Started GET "/NR10complementar" for 108.171.187.164 at 2012-12-13 21:00:28 -0300
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Processing by Events::PublicController#show as HTML
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Parameters: {"event_slug"=>"NR10complementar"}
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mEvent Load (1.9ms)#033[0m  #033[1mSELECT "events".* FROM "events" WHERE "events"."destroyed_at" IS NULL AND "events"."slug" = 'NR10complementar' LIMIT 1#033[0m
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[35mTicket Load (1.4ms)#033[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = 1106 LIMIT 1
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mEvent Load (1.7ms)#033[0m  #033[1mSELECT "events".* FROM "events" WHERE "events"."destroyed_at" IS NULL AND "events"."id" = 1106 LIMIT 1#033[0m
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[35mTicket Load (1.3ms)#033[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = 1106 AND (quantity > 0 AND sale_starts_at < '2012-12-14 00:00:28' AND sale_ends_at > '2012-12-14 00:00:28')
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mCACHE (0.0ms)#033[0m  #033[1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = 1106 AND (quantity > 0 AND sale_starts_at < '2012-12-14 00:00:28' AND sale_ends_at > '2012-12-14 00:00:28')#033[0m
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[35mCACHE (0.0ms)#033[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = 1106 AND (quantity > 0 AND sale_starts_at < '2012-12-14 00:00:28' AND sale_ends_at > '2012-12-14 00:00:28')
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mCACHE (0.0ms)#033[0m  #033[1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = 1106 AND (quantity > 0 AND sale_starts_at < '2012-12-14 00:00:28' AND sale_ends_at > '2012-12-14 00:00:28')#033[0m
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[35mUser Load (2.3ms)#033[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1308 LIMIT 1
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mOrganization Load (1.6ms)#033[0m  #033[1mSELECT "organizations".* FROM "organizations" WHERE "organizations"."user_id" = 1308 LIMIT 1#033[0m
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[35mTicket Load (2.1ms)#033[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = 1106
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mDiscountCoupon Load (1.8ms)#033[0m  #033[1mSELECT "discount_coupons".* FROM "discount_coupons" WHERE "discount_coupons"."ticket_id" = 2355#033[0m
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered events/tickets/_public_list.html.erb (10.4ms)
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered events/public/_report.html.erb (0.7ms)
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered events/_sidebar.html.erb (3.6ms)
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered events/public/show.html.erb within layouts/public_events (23.3ms)
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered layouts/_alerts.html.erb (0.1ms)
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered layouts/_custom_header.html.erb (0.0ms)
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered layouts/_public_event_header.html.erb (1.4ms)
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered events/public/_notification.html.erb (0.9ms)
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered events/_footer.html.erb (0.7ms)
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered layouts/public.html.erb (2.1ms)
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Completed 200 OK in 56ms (Views: 26.1ms | ActiveRecord: 14.2ms)
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[router] at=info method=GET path=/NR10complementar host=eventick.com.br fwd=108.171.187.164 dyno=web.1 queue=0 wait=1ms connect=3ms service=66ms status=200 bytes=14724
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[nginx] 108.171.187.164 - - [14/Dec/2012:00:00:28 +0000] "GET /NR10complementar HTTP/1.1" 200 4831 "-" "Mozilla/5.0 (compatible; Embedly/0.2; +http://support.embed.ly/)" eventick.com.br
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  #033[1m#033[35mSlider Load (30.8ms)#033[0m  SELECT "sliders".* FROM "sliders" 
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[nginx] 108.171.187.164 - - [14/Dec/2012:00:00:28 +0000] "GET /assets/favicon.ico HTTP/1.1" 200 2972 "-" "Mozilla/5.0 (compatible; Embedly/0.2; snap; +http://support.embed.ly/)" eventick.com.br
+Dec 14 00:00:28 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[router] at=info method=GET path=/assets/favicon.ico host=eventick.com.br fwd=108.171.187.164 dyno=web.1 queue=0 wait=0ms connect=1ms service=4ms status=200 bytes=2972
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Started GET "/favicon.ico" for 108.171.187.164 at 2012-12-13 21:00:29 -0300
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Processing by Events::PublicController#show as 
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Parameters: {"event_slug"=>"favicon"}
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[postgres] [199-1] ucbj4qnm7jpqc7 [df260qnau3d9d] LOG:  duration: 162.158 ms  statement: SELECT COUNT(*) FROM "attendees" INNER JOIN "order_items" ON "order_items"."id" = "attendees"."order_item_id" INNER JOIN "orders" ON "orders"."id" = "order_items"."order_id" WHERE "orders"."status" IN ('approved', 'completed', 'manually_added', 'free')
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[35mEvent Load (62.3ms)#033[0m  SELECT "events".* FROM "events" WHERE "events"."destroyed_at" IS NULL AND "events"."slug" = 'favicon' LIMIT 1
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[nginx] 108.171.187.164 - - [14/Dec/2012:00:00:29 +0000] "GET /favicon.ico HTTP/1.1" 404 1735 "-" "Mozilla/5.0 (compatible; Embedly/0.2; snap; +http://support.embed.ly/)" eventick.com.br
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered public/404/404-event.html (0.0ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Completed 404 Not Found in 66ms (Views: 0.7ms | ActiveRecord: 62.3ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  #033[1m#033[36m (175.1ms)#033[0m  #033[1mSELECT COUNT(*) FROM "attendees" INNER JOIN "order_items" ON "order_items"."id" = "attendees"."order_item_id" INNER JOIN "orders" ON "orders"."id" = "order_items"."order_id" WHERE "orders"."status" IN ('approved', 'completed', 'manually_added', 'free')#033[0m
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[router] at=info method=GET path=/favicon.ico host=eventick.com.br fwd=108.171.187.164 dyno=web.1 queue=0 wait=0ms connect=2ms service=76ms status=404 bytes=4107
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[postgres] [200-1] ucbj4qnm7jpqc7 [df260qnau3d9d] LOG:  duration: 136.186 ms  statement: SELECT "events".* FROM "events"  WHERE "events"."destroyed_at" IS NULL AND "events"."draft" = 'f' AND "events"."publicly_displayed" = 't' AND (destroyed_at IS NULL AND start_at >= '2012-12-14 02:59:59') ORDER BY start_at ASC
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[router] at=info method=GET path=/assets/icomestrelasolo-d76851d926e1782c3d03a479556e3d97.png host=eventick.com.br fwd=108.171.187.164 dyno=web.2 queue=0 wait=0ms connect=9ms service=252ms status=200 bytes=59608
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[nginx] 108.171.187.164 - - [14/Dec/2012:00:00:29 +0000] "GET /assets/icomestrelasolo-d76851d926e1782c3d03a479556e3d97.png HTTP/1.1" 200 59608 "-" "Mozilla/5.0 (compatible; Embedly/0.2; snap; +http://support.embed.ly/)" eventick.com.br
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  #033[1m#033[35mEvent Load (455.2ms)#033[0m  SELECT "events".* FROM "events" WHERE "events"."destroyed_at" IS NULL AND "events"."draft" = 'f' AND "events"."publicly_displayed" = 't' AND (destroyed_at IS NULL AND start_at >= '2012-12-14 02:59:59') ORDER BY start_at ASC
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/_header.html.erb (1.2ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_slider_item.html.erb (49.9ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[router] at=info method=HEAD path=/ host=eventick.com.br fwd=50.18.57.7 dyno=web.2 queue=0 wait=0ms connect=0ms service=4353ms status=200 bytes=0
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_next_events_box.html.erb (32.8ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_recent_blog_posts.html.erb (0.7ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_eventick_partners.html.erb (0.0ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_eventick_media.html.erb (0.0ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_social_media_landing.html.erb (0.0ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/_footer2.html.erb (1.3ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index.html.erb (90.5ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2] Completed 200 OK in 4342ms (Views: 107.4ms | ActiveRecord: 661.1ms)
+Dec 14 00:00:29 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[nginx] 50.18.57.7 - - [14/Dec/2012:00:00:29 +0000] "HEAD / HTTP/1.0" 200 0 "-" "NewRelicPinger/1.0 (194817)" eventick.com.br
+Dec 14 00:00:30 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2] Started GET "/" for 204.93.223.151 at 2012-12-13 21:00:30 -0300
+Dec 14 00:00:30 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2] Processing by StaticController#index as */*
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  #033[1m#033[35mSlider Load (51.3ms)#033[0m  SELECT "sliders".* FROM "sliders" 
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[postgres] [174-1] ucbj4qnm7jpqc7 [df260qnau3d9d] LOG:  duration: 92.469 ms  statement: SELECT COUNT(*) FROM "attendees" INNER JOIN "order_items" ON "order_items"."id" = "attendees"."order_item_id" INNER JOIN "orders" ON "orders"."id" = "order_items"."order_id" WHERE "orders"."status" IN ('approved', 'completed', 'manually_added', 'free')
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  #033[1m#033[36m (93.7ms)#033[0m  #033[1mSELECT COUNT(*) FROM "attendees" INNER JOIN "order_items" ON "order_items"."id" = "attendees"."order_item_id" INNER JOIN "orders" ON "orders"."id" = "order_items"."order_id" WHERE "orders"."status" IN ('approved', 'completed', 'manually_added', 'free')#033[0m
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  #033[1m#033[35mEvent Load (53.5ms)#033[0m  SELECT "events".* FROM "events" WHERE "events"."destroyed_at" IS NULL AND "events"."draft" = 'f' AND "events"."publicly_displayed" = 't' AND (destroyed_at IS NULL AND start_at >= '2012-12-14 02:59:59') ORDER BY start_at ASC
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/_header.html.erb (1.2ms)
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_slider_item.html.erb (6.7ms)
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[router] at=info method=GET path=/ host=eventick.com.br fwd=204.93.223.151 dyno=web.2 queue=0 wait=0ms connect=2ms service=2170ms status=200 bytes=22232
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_next_events_box.html.erb (2.3ms)
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_recent_blog_posts.html.erb (0.7ms)
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_eventick_partners.html.erb (0.0ms)
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_eventick_media.html.erb (0.0ms)
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index/_social_media_landing.html.erb (0.1ms)
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/_footer2.html.erb (1.4ms)
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2]  Rendered static/index.html.erb (165.3ms)
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.2] Completed 200 OK in 1921ms (Views: 166.3ms | ActiveRecord: 198.5ms)
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[nginx] 204.93.223.151 - - [14/Dec/2012:00:00:32 +0000] "HEAD / HTTP/1.0" 200 0 "-" "NewRelicPinger/1.0 (85063)" eventick.com.br
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Started GET "/" for 204.93.223.151 at 2012-12-13 21:00:32 -0300
+Dec 14 00:00:32 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Processing by StaticController#index as */*
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mSlider Load (1.6ms)#033[0m  #033[1mSELECT "sliders".* FROM "sliders" #033[0m
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[postgres] [269-1] ucbj4qnm7jpqc7 [df260qnau3d9d] LOG:  duration: 149.626 ms  statement: SELECT COUNT(*) FROM "attendees" INNER JOIN "order_items" ON "order_items"."id" = "attendees"."order_item_id" INNER JOIN "orders" ON "orders"."id" = "order_items"."order_id" WHERE "orders"."status" IN ('approved', 'completed', 'manually_added', 'free')
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[35m (151.3ms)#033[0m  SELECT COUNT(*) FROM "attendees" INNER JOIN "order_items" ON "order_items"."id" = "attendees"."order_item_id" INNER JOIN "orders" ON "orders"."id" = "order_items"."order_id" WHERE "orders"."status" IN ('approved', 'completed', 'manually_added', 'free')
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mEvent Load (40.0ms)#033[0m  #033[1mSELECT "events".* FROM "events" WHERE "events"."destroyed_at" IS NULL AND "events"."draft" = 'f' AND "events"."publicly_displayed" = 't' AND (destroyed_at IS NULL AND start_at >= '2012-12-14 02:59:59') ORDER BY start_at ASC#033[0m
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered static/_header.html.erb (1.1ms)
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered static/index/_slider_item.html.erb (5.1ms)
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered static/index/_next_events_box.html.erb (1.8ms)
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered static/index/_recent_blog_posts.html.erb (0.6ms)
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered static/index/_eventick_partners.html.erb (0.0ms)
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered static/index/_eventick_media.html.erb (0.0ms)
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered static/index/_social_media_landing.html.erb (0.0ms)
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered static/_footer2.html.erb (1.2ms)
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Rendered static/index.html.erb (13.6ms)
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Completed 200 OK in 1456ms (Views: 14.2ms | ActiveRecord: 192.9ms)
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[router] at=info method=HEAD path=/ host=eventick.com.br fwd=204.93.223.151 dyno=web.1 queue=0 wait=0ms connect=1ms service=1467ms status=200 bytes=0
+Dec 14 00:00:34 d.dc21864c-316d-4d09-aa9c-535e8531a782 heroku[nginx] 204.93.223.151 - - [14/Dec/2012:00:00:34 +0000] "HEAD / HTTP/1.0" 200 0 "-" "NewRelicPinger/1.0 (194817)" eventick.com.br
+Dec 14 00:00:43 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Started GET "/" for 50.18.57.7 at 2012-12-13 21:00:43 -0300
+Dec 14 00:00:43 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Processing by StaticController#index as */*
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Started GET "/reveillon-da-vila" for 189.124.139.19 at 2012-12-13 21:00:44 -0300
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1] Processing by Events::PublicController#show as */*
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  Parameters: {"event_slug"=>"reveillon-da-vila"}
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mEvent Load (1.6ms)#033[0m  #033[1mSELECT "events".* FROM "events" WHERE "events"."destroyed_at" IS NULL AND "events"."slug" = 'reveillon-da-vila' LIMIT 1#033[0m
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[35mTicket Load (1.2ms)#033[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = 1003 LIMIT 1
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mEvent Load (1.4ms)#033[0m  #033[1mSELECT "events".* FROM "events" WHERE "events"."destroyed_at" IS NULL AND "events"."id" = 1003 LIMIT 1#033[0m
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[35mTicket Load (1.2ms)#033[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = 1003 AND (quantity > 0 AND sale_starts_at < '2012-12-14 00:00:44' AND sale_ends_at > '2012-12-14 00:00:44')
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mOrderItem Load (8.9ms)#033[0m  #033[1mSELECT "order_items".* FROM "order_items" INNER JOIN "orders" ON "orders"."id" = "order_items"."order_id" WHERE "order_items"."ticket_id" = 2089 AND "orders"."status" IN ('approved', 'completed', 'manually_added', 'free', 'pending', 'verifying') AND "order_items"."ticket_id" = 2089#033[0m
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[35mOrderItem Load (8.2ms)#033[0m  SELECT "order_items".* FROM "order_items" INNER JOIN "orders" ON "orders"."id" = "order_items"."order_id" WHERE "order_items"."ticket_id" = 2088 AND "orders"."status" IN ('approved', 'completed', 'manually_added', 'free', 'pending', 'verifying') AND "order_items"."ticket_id" = 2088
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mCACHE (0.0ms)#033[0m  #033[1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = 1003 AND (quantity > 0 AND sale_starts_at < '2012-12-14 00:00:44' AND sale_ends_at > '2012-12-14 00:00:44')#033[0m
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[35m (1.3ms)#033[0m  SELECT COUNT(*) FROM "tickets" INNER JOIN "discount_coupons" ON "discount_coupons"."ticket_id" = "tickets"."id" WHERE "tickets"."event_id" = 1003 AND (discount_coupons.code = NULL AND hidden = 't')
+Dec 14 00:00:44 d.dc21864c-316d-4d09-aa9c-535e8531a782 app[web.1]  #033[1m#033[36mTicket Load (1.3ms)#033[0m  #033[1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = 1003 AND (quantity > 0 AND sale_starts_at < '2012-12-14 00:00:44' AND sale_ends_at > '2012-12-14 00:00:44') AND (("tickets"."hidden" IN ('f') OR "tickets"."hidden" IS NULL)) ORDER BY created_at asc#033[0m
