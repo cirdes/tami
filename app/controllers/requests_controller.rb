@@ -24,6 +24,7 @@ class RequestsController < ApplicationController
   # GET /requests/new
   # GET /requests/new.json
   def new
+    Request.parse_file
     @request = Request.new
 
     respond_to do |format|
