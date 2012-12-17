@@ -5,8 +5,10 @@ class Request < ActiveRecord::Base
   scope :timestamps, lambda {|start_at, end_at| where(timestamp: start_at..end_at)}
   scope :with_method, lambda {|method| where(method: method)}
 
+  #https://dl.dropbox.com/s/4xisu6iaz1t2jyz/eventick_parsed.log?dl=1
+  #https://dl.dropbox.com/s/r4klddlxwvzaim4/eventick.log?dl=1
   def self.parse_file
-  	open('https://dl.dropbox.com/s/r4klddlxwvzaim4/eventick.log?dl=1') do |file|
+  	open('https://dl.dropbox.com/s/4xisu6iaz1t2jyz/eventick_parsed.log?dl=1') do |file|
   		file.each_line do |line|
   			if line =~ /.*Started.*/
   				timestamp = line.scan(/\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d -\d\d\d\d/).first
@@ -21,22 +23,14 @@ class Request < ActiveRecord::Base
 
   def self.get_methods
     results = Hash.new
-    now = DateTime.now
+    now = DateTime.now - 3.day
+
     0.upto(23) do |i|
       entry = Hash.new
-      
-      entry["GET"] = method_count("GET", i, now)
-      entry["PUT"] = method_count("PUT", i, now)
-      entry["POST"] = method_count("POST", i, now)
-      entry["DELETE"] = method_count("DELETE", i, now)
-      results[i] = entry
+      start_hour = now.change(hour: i)
+      end_hour = now.change(hour: (i + 1))  
+      results[i] = Request.timestamps(start_hour, end_hour).count(group: "method")
     end
     results
-  end
-
-  def self.method_count(method, i, now)
-    start_hour = now.change(hour: i)
-    end_hour = now.change(hour: (i + 1))
-    Request.with_method(method).timestamps(start_hour, end_hour).count
   end
 end

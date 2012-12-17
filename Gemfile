@@ -9,6 +9,8 @@ gem 'jquery-rails'
 
 gem 'unicorn', '~> 4.3.1'
 
+gem 'kaminari'
+
 gem 'rabl'
 gem 'yajl-ruby'
 # Gems used only for assets and not required
