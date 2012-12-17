@@ -4,6 +4,9 @@ class RequestsController < ApplicationController
   # GET /requests.json
   def index
     @requests = Request.all
+    @requests_method_count = Request.get_methods
+    @requests_count = @requests.count
+
     respond_with @requests
   end
 
@@ -30,6 +33,7 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
     @request = Request.new(params[:request])
+    flash[:notice] = "Request was created successfully." if @request.save
     respond_with @request
   end
 
@@ -37,6 +41,7 @@ class RequestsController < ApplicationController
   # PUT /requests/1.json
   def update
     @request = Request.find(params[:id])
+    flash[:notice] = "Request was updated successfully." if @request.save
     respond_with @request
   end
 
