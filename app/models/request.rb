@@ -10,13 +10,17 @@ class Request < ActiveRecord::Base
   def self.parse_file
   	open('https://dl.dropbox.com/s/4xisu6iaz1t2jyz/eventick_parsed.log?dl=1') do |file|
   		file.each_line do |line|
-  			if line =~ /.*Started.*/
-  				timestamp = line.scan(/\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d -\d\d\d\d/).first
-  				ip = line.scan(/\d+\.\d+\.\d+\.\d+/).first
-  				url = line.scan(/".+"/).first
-  				method = line.scan(/GET|PUT|POST|DELETE/).first
-  				Request.create(ip: ip, timestamp: timestamp, url: url, method: method)
-  			end
+				begin
+          if line =~ /.*Started.*/
+            timestamp = line.scan(/\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d -\d\d\d\d/).first
+            ip = line.scan(/\d+\.\d+\.\d+\.\d+/).first
+            url = line.scan(/".+"/).first
+            method = line.scan(/GET|PUT|POST|DELETE/).first
+            Request.create(ip: ip, timestamp: timestamp, url: url, method: method)
+          end
+        rescue Exception => e
+          next           
+        end
   		end
   	end
   end
