@@ -5,7 +5,7 @@ class RequestsController < ApplicationController
   def index
     @requests = Request.page params[:page]
     @requests_method_count = Request.get_methods
-    @requests_count = @requests.count
+    @requests_urls = Request.get_urls
 
     respond_with @requests
   end

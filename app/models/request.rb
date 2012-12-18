@@ -33,4 +33,20 @@ class Request < ActiveRecord::Base
     end
     results
   end
+
+  def self.get_urls
+    results = Hash.new
+    now = DateTime.now - 3.day
+
+    0.upto(23) do |i|
+      entry = Hash.new
+      start_hour = now.change(hour: i)
+      end_hour = now.change(hour: (i + 1))  
+      request_per_hour = Request.timestamps(start_hour, end_hour).count(group: "url")
+      sorted = request_per_hour.sort { |l,r| l[1] <=> r[1] }
+
+      results[i] = sorted[-10..-1]
+    end
+    results
+  end
 end
