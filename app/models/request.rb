@@ -8,7 +8,7 @@ class Request < ActiveRecord::Base
   #https://dl.dropbox.com/s/4xisu6iaz1t2jyz/eventick_parsed.log?dl=1
   #https://dl.dropbox.com/s/r4klddlxwvzaim4/eventick.log?dl=1
   def self.parse_file
-  	open('https://dl.dropbox.com/s/4xisu6iaz1t2jyz/eventick_parsed.log?dl=1') do |file|
+  	open('https://s3.amazonaws.com/eventick-logs/eventick-parsed.log') do |file|
   		file.each_line do |line|
 				begin
           if line =~ /.*Started.*/
