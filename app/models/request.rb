@@ -27,7 +27,7 @@ class Request < ActiveRecord::Base
 
   def self.get_methods
     results = Hash.new
-    now = DateTime.now - 4.day
+    now = DateTime.now - 1.day
 
     0.upto(23) do |i|
       entry = Hash.new
@@ -40,7 +40,7 @@ class Request < ActiveRecord::Base
 
   def self.get_urls
     results = Hash.new
-    now = DateTime.now - 4.day
+    now = DateTime.now - 1.day
 
     0.upto(23) do |i|
       entry = Hash.new
